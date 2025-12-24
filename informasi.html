@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi - Pusat Bantuan</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+:root {
+            --primary-bg: #cecdce; 
+            --header-bg: #b6b6b6 !important; 
+            --header-text: #fdfcfc !important; 
+            --navbar-bg:#7e7c7c !important;
+            --link-text: #7e7c7c !important;
+            --active-bg: #1c1b1b;
+            --active-text: white;
+            --accordion-border: #1c1b1b;
+}
+
+body {
+    background:#cecdce;
+}
+
+header {
+    background:#1c1b1b;
+    text-align:center;
+    padding:40px 10px;
+    color:white;
+}
+        
+.navbar {
+    background:#717171 !important;
+} 
+.nav-item {
+    display: inline-block !important; 
+}
+.nav-link {
+    color: #fdfcfc !important;
+    font-weight: 500;
+}
+.nav-link.active,
+.nav-link:hover {
+    background-color: #1c1b1b;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--header-text);
+    background-color: var(--navbar-bg);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--accordion-border);
+}
+        
+.accordion-item {
+    border: 1px solid var(--accordion-border);
+    margin-bottom: 8px; 
+    border-radius: 5px !important;
+}
+    
+.accordion-button {
+    border-radius: 5px !important;
+    font-weight: 600;
+}
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Selamat Datang di Website Saya</h2>
+    <p>Halaman Informasi</p>
+</header>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="karya.html">Karya & Project</a></li>
+            <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+            <li class="nav-item"><a class="nav-link active" href="informasi.html">Informasi</a></li>
+            <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container my-5">
+    <div class="text-center mb-4">
+        <h3 class="fw-bold text-center">Pusat Informasi & Bantuan</h3>
+        <p class="text-muted">Klik pada pertanyaan di bawah ini untuk mendapatkan bantuan cepat mengenai website ini.</p>
+    </div>
+
+    <div class="accordion" id="faqAccordion">
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Bagaimana cara melihat karya & project yang tersedia di website ini?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Anda bisa mengunjungi halaman Karya & Project melalui menu navigasi di atas. Yang menampilkan hasil pekerjaan dan latihan yang telah dibuat.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Kenapa beberapa konten galeri tidak dapat ditampilkan dengan sempurna?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Beberapa media mungkin bergantung pada koneksi internet atau format file yang digunakan, sehingga memerlukan waktu untuk dimuat dengan baik.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Siapa yang membuat website ini?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Website ini dibuat dan dikelola oleh KAYLA CANTIKA sebagai bagian dari tugas UAS mata kuliah Pemograman Web 1.
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<footer class="text-center py-3" style="color: var(--link-text); background-color: var(--primary-bg);">
+    © 2025 WEBSITE - KAYLA CANTIKA
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

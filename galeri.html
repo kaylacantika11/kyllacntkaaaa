@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halaman Media</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background:#cecdce;
+}
+
+header {
+    background:#1c1b1b;
+    text-align:center;
+    padding:40px 10px;
+    color:white;
+}
+
+.navbar {
+    background:#717171 !important;
+}
+.nav-link {
+    color:#fdfcfc !important;
+    font-weight: 500;
+}
+
+.navbar-nav {
+    display: flex !important; 
+    flex-direction: row !important;
+}
+.nav-item {
+    display: inline-block !important; 
+}
+
+.nav-link.active {
+    background:#1c1b1b;
+    color:white !important;
+    border-radius:5px;
+}
+
+footer {
+    color:#323232;
+}
+
+.card {
+    border:none;
+    border-radius:12px;
+}
+.card img {
+    height:200px; 
+    object-fit:cover;
+    border-top-left-radius:12px;
+    border-top-right-radius:12px;
+    cursor: pointer;
+    outline: none; 
+    border: none;
+}
+
+.card video {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius:12px;
+    border-top-right-radius:12px;
+    display: block;
+}
+
+.card-body {
+    width: 100%;
+    box-sizing: border-box; 
+}
+audio {
+    width: 100% !important; 
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.tab-input { display: none; }
+.media-item { display: none; } 
+.tab-label {
+    cursor: pointer;
+    border: 1px solid #1c1b1b;
+    color: #1c1b1b;
+    border-radius: 20px;
+    padding: 6px 22px;
+    margin-right: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+#tab-foto:checked ~ .media-content .foto,
+#tab-video:checked ~ .media-content .video,
+#tab-audio:checked ~ .media-content .audio {
+    display: block;
+}
+.media-content { display: flex; flex-wrap: wrap; justify-content: center; }
+
+#tab-foto:checked ~ .tab-controls label[for="tab-foto"],
+#tab-video:checked ~ .tab-controls label[for="tab-video"],
+#tab-audio:checked ~ .tab-controls label[for="tab-audio"] {
+    background: #8b7e7e;
+    border: none;
+}
+
+.lightbox {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0);
+    z-index: 9999; 
+    transition: opacity 0.4s;
+    padding: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox img, 
+.lightbox video,
+.lightbox iframe {
+     max-width: 90%; 
+     max-height: 90vh; 
+     border-radius: 10px; 
+     object-fit: contain; 
+     display: block; 
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    visibility: hidden; 
+    z-index: 10000;
+}
+
+:target .lightbox-close {
+    visibility: visible;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Selamat Datang di Website Saya</h2>
+    <p>Halaman Media</p>
+</header>
+
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<ul class="navbar-nav mx-auto">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+    <li class="nav-item"><a class="nav-link" href="karya.html">Karya & Project</a></li>
+    <li class="nav-item"><a class="nav-link active" href="galeri.html">Galeri</a></li>
+    <li class="nav-item"><a class="nav-link" href="informasi.html">Informasi</a></li>
+    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="container text-center my-5">
+    <h3 class="fw-bold">Galeri saya</h3>
+    <p>Klik media di bawah ini untuk melihat atau memutarnya.</p>
+    
+    <input type="radio" id="tab-foto" name="media-tabs" class="tab-input" checked>
+    <input type="radio" id="tab-video" name="media-tabs" class="tab-input">
+    <input type="radio" id="tab-audio" name="media-tabs" class="tab-input">
+    
+    <div class="mb-4 d-flex justify-content-center tab-controls">
+        <label for="tab-foto" class="tab-label">📷 Foto</label>
+        <label for="tab-video" class="tab-label">📹 Video</label>
+        <label for="tab-audio" class="tab-label">🎵 Audio</label>
+    </div>
+
+    <div class="row g-4 justify-content-center media-content">
+        
+        <div class="col-md-4 col-lg-4 media-item foto">
+            <div class="card shadow">
+                <a href="#lightbox-foto1">
+                    <img src="item1.jpeg" class="card-img-top" alt="Foto Pertemuan Web Dasar 1">
+                </a>
+                <div class="card-body"> </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-lg-4 media-item foto">
+            <div class="card shadow">
+                 <a href="#lightbox-foto2">
+                    <img src="item2.jpeg" class="card-img-top" alt="Foto Pertemuan Web Dasar 2">
+                </a>
+                <div class="card-body"> </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4 media-item foto">
+            <div class="card shadow">
+                 <a href="#lightbox-foto3">
+                    <img src="item3.jpeg" class="card-img-top" alt="Foto Pertemuan Web Dasar 3">
+                </a>
+                <div class="card-body"> </div>
+            </div>
+        </div>
+        
+    <div class="col-md-4 col-lg-4 media-item video">
+    <div class="card shadow">
+        <a href="#lightbox-video1">
+            <video muted>
+                <source src="vid1.mp4" type="video/mp4">
+            </video>
+        </a>
+        <div class="card-body text-center">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-lg-4 media-item video">
+    <div class="card shadow">
+        <a href="#lightbox-video2">
+            <video muted>
+                <source src="vid2.mp4" type="video/mp4">
+            </video>
+        </a>
+        <div class="card-body text-center">
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-lg-4 media-item video">
+    <div class="card shadow">
+        <a href="#lightbox-video3">
+            <video muted>
+                <source src="vid3.mp4" type="video/mp4">
+            </video>
+        </a>
+        <div class="card-body text-center">
+        </div>
+    </div>
+</div>
+
+
+        
+        <div class="col-md-4 col-lg-4 media-item audio">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Best Part - Daniel Caesar</h5>
+                    <audio controls preload="none">
+                        <source src="H.E.R. - Best Part (Lyrics) Ft. Daniel Caesar.mp3" type="audio/mpeg" /> 
+                        Browser Anda tidak mendukung pemutar audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-lg-4 media-item audio">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Usai Di Sini - Raisa</h5>
+                    <audio controls preload="none">
+                        <source src="Raisa - Usai Di Sini (Official Lyric Video).mp3" type="audio/mpeg" /> 
+                        Browser Anda tidak mendukung pemutar audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-lg-4 media-item audio">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Let Me Love You - Mario</h5>
+                    <audio controls preload="none">
+                        <source src="Mario - Let Me Love You (Lyrics).mp3" type="audio/mpeg" /> 
+                        Browser Anda tidak mendukung pemutar audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<a href="#" class="lightbox" id="lightbox-foto1">
+    <img src="item1.jpeg" alt="Foto Pertemuan Web Dasar 1">
+    <a href="#tab-foto" class="lightbox-close">&times;</a>
+</a>
+
+<a href="#" class="lightbox" id="lightbox-foto2">
+    <img src="item2.jpeg" alt="Foto Pertemuan Web Dasar 2">
+    <a href="#tab-foto" class="lightbox-close">&times;</a>
+</a>
+
+<a href="#" class="lightbox" id="lightbox-foto3">
+    <img src="item3.jpeg" alt="Foto Pertemuan Web Dasar 3">
+    <a href="#tab-foto" class="lightbox-close">&times;</a>
+</a>
+
+<a href="#tab-video" class="lightbox" id="lightbox-video1">
+    <video width="640" height="360" controls>
+        <source src="vid1.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+    </video>
+    <a href="#tab-video" class="lightbox-close">&times;</a>
+</a>
+
+<a href="#tab-video" class="lightbox" id="lightbox-video2">
+    <video width="640" height="360" controls>
+        <source src="vid2.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+    </video>
+    <a href="#tab-video" class="lightbox-close">&times;</a>
+</a>
+
+<a href="#tab-video" class="lightbox" id="lightbox-video3">
+    <video width="640" height="360" controls>
+        <source src="vid3.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+    </video>
+    <a href="#tab-video" class="lightbox-close">&times;</a>
+</a>
+
+<footer class="text-center text-muted py-3">
+© 2025 WEBSITE - KAYLA CANTIKA
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
