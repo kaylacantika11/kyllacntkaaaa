@@ -2,87 +2,34 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-    body {
-    background-color: #cecdce;
-}
-
-header {
-    background-color: #1c1b1b;
-    text-align: center;
-    padding: 40px 10px;
-    color: white;
-}
-
-.navbar {
-    background-color: #717171 !important;
-}
-.nav-link {
-    color: #fdfcfc !important;
-    font-weight: 500;
-}
-.nav-link.active,
-.nav-link:hover {
-    background-color: #1c1b1b;
-    color: white !important;
-    border-radius: 5px;
-}
-
-    footer {
-        color: #323232;
-}
-
-.lightbox {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-.lightbox video {
-    margin: 0 !important; 
-}
-</style>
+<title>Home | Portfolio Kayla</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-    <h2>Selamat Datang di Website Saya</h2>
-    <p>Halaman Utama Website Sederhana</p>
-</header>
-
-<nav class="navbar navbar-expand-lg">
-<div class="container">
-    <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="profile.html">Profil</a></li>
-        <li class="nav-item"><a class="nav-link" href="karya.html">Karya & project</a></li>
-        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
-        <li class="nav-item"><a class="nav-link" href="informasi.html">Informasi</a></li>
-        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+<nav>
+    <h1>Kayla.</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="karya.html">Karya & Project</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
     </ul>
-</div>
 </nav>
 
-<div class="container text-center my-5">
-<h3 class="fw-bold">Pemrograman Web dengan HTML</h3>
-<p>Selamat datang di halaman utama.</p>
+<div class="hero">
+    <div>
+        <img src="fotoprofile.jpeg" class="profile-img">
+        <h2>Hi, I'm <span>Kayla Cantika</span></h2>
+        <p>Mahasiswa Sistem Informasi | Web Enthusiast</p>
+    </div>
+</div>
 
-<a href="#" class="lightbox" id="lightbox-media2">
-    <video width="640" height="360" controls>
-        <source src="vidawal.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-    </video>
-    <a href="#" class="lightbox-close">&times;</a>
-</a>
+<footer>© 2025 Kayla Cantika</footer>
 
-<footer class="text-center py-3">
-© 2025 WEBSITE - KAYLA CANTIKA
-</footer>
-
+<script>
+    console.log("Home aktif");
+</script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h1>Kayla.</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="karya.html">Karya & Project</a></li>
+        <li><a href="media.html" class="active">Media</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h2 style="text-align:center;">Media</h2>
+    <p style="text-align:center;">Pilih jenis media untuk ditampilkan</p>
+
+    <!-- TOMBOL MEDIA -->
+    <div style="text-align:center; margin:30px 0;">
+        <button class="tab-label" onclick="showMedia('foto')">📷 Foto</button>
+        <button class="tab-label" onclick="showMedia('video')">📹 Video</button>
+        <button class="tab-label" onclick="showMedia('audio')">🎵 Audio</button>
+        <button class="tab-label" onclick="showMedia('dokumen')">📄 Dokumen</button>
+    </div>
+
+    <!-- FOTO -->
+    <div class="card-container media foto">
+        <div class="card">
+            <img src="item1.jpeg" class="karya-img" onclick="openImg(this)">
+        </div>
+        <div class="card">
+            <img src="item2.jpeg" class="karya-img" onclick="openImg(this)">
+        </div>
+        <div class="card">
+            <img src="item3.jpeg" class="karya-img" onclick="openImg(this)">
+        </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="card-container media video" style="display:none;">
+        <div class="card">
+            <video controls>
+                <source src="vid1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="card">
+            <video controls>
+                <source src="vid2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="card">
+            <video controls>
+                <source src="vid3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- AUDIO -->
+    <div class="card-container media audio" style="display:none;">
+        <div class="card">
+            <p>Best Part - Daniel Caesar</p>
+            <audio controls>
+                <source src="H.E.R. - Best Part (Lyrics) Ft. Daniel Caesar.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="card">
+            <p>Usai Di Sini - Raisa</p>
+            <audio controls>
+                <source src="Raisa - Usai Di Sini (Official Lyric Video).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="card">
+            <p>Let Me Love You - Mario</p>
+            <audio controls>
+                <source src="Mario - Let Me Love You (Lyrics).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <!-- DOKUMEN -->
+<div class="card-container media dokumen" style="display:none;">
+
+    <div class="card">
+        <iframe src="SERTIFIKAT PKKMB_KAYLA CANTIKA.pdf" width="100%" height="250"></iframe>
+        <p>Sertifikat PKKMB</p>
+        <a href="SERTIFIKAT PKKMB_KAYLA CANTIKA.pdf" target="_blank">Buka Fullscreen</a>
+    </div>
+
+    <div class="card">
+        <iframe src="Konsep SI_Kayla Cantika.drawio.pdf" width="100%" height="250"></iframe>
+        <p>Sertifikat seminar</p>
+        <a href="Konsep SI_Kayla Cantika.drawio.pdf" target="_blank">Buka Fullscreen</a>
+    </div>
+
+    <div class="card">
+        <iframe src="SERTIFIKAT SEMINAR NATASIA_KAYLA CANTIKA.pdf" width="100%" height="250"></iframe>
+        <p>Laporan / Dokumen Tugas</p>
+        <a href="SERTIFIKAT SEMINAR NATASIA_KAYLA CANTIKA.pdf" target="_blank">Buka Fullscreen</a>
+    </div>
+
+</div>
+
+
+</section>
+
+<footer>© 2025 Kayla Cantika</footer>
+
+<!-- MODAL GAMBAR -->
+<div id="imgModal" onclick="closeImg()">
+    <span>&times;</span>
+    <img id="modalImg">
+</div>
+
+<script>
+function showMedia(type){
+    document.querySelectorAll('.media').forEach(m => m.style.display='none');
+    document.querySelector('.'+type).style.display='grid';
+}
+
+function openImg(img){
+    imgModal.style.display="flex";
+    modalImg.src = img.src;
+}
+function closeImg(){
+    imgModal.style.display="none";
+}
+</script>
+
+</body>
+</html>

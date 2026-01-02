@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f0f;
+    color: #eaeaea;
+}
+
+/* NAVBAR */
+nav {
+    background: #111;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #bdbdbd;
+    transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #fff;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+}
+
+.hero span {
+    color: #9e9e9e;
+}
+
+/* FOTO PROFILE */
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2b2b2b;
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255,255,255,0.45);
+}
+
+/* SECTION */
+section {
+    padding: 80px 50px;
+    animation: fade 1s ease;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* PROFILE */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.profile-text {
+    max-width: 500px;
+}
+
+/* CARD */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: #222;
+}
+
+/* MEDIA ELEMENT */
+.media img,
+.media video,
+.media audio {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* IMAGE CARD */
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.card video {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* TAB MEDIA */
+.tab-input {
+    display: none;
+}
+
+.media-item {
+    display: none;
+}
+
+.media-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* SHOW MEDIA */
+#tab-foto:checked ~ .media-content .foto {
+    display: block;
+}
+
+#tab-video:checked ~ .media-content .video {
+    display: block;
+}
+
+#tab-audio:checked ~ .media-content .audio {
+    display: block;
+}
+
+#tab-documen:checked ~ .media-content .dokumen {
+    display: block;
+}
+
+/* TAB BUTTON */
+.tab-label {
+    cursor: pointer;
+    border: 1px solid #777;
+    color: #eaeaea;          /* ← DIPERBAIKI */
+    background: transparent;
+    border-radius: 20px;
+    padding: 6px 22px;
+    margin-right: 8px;
+    transition: 0.3s;
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* HOVER TAB */
+.tab-label:hover {
+    background: #a49797;
+    color: #fff;
+    border-color: #999;
+}
+
+/* EFEK SAAT DIKLIK (ACTIVE PRESS) */
+.tab-label:active {
+    transform: scale(0.96);
+    background: #555;
+}
+
+/* TAB AKTIF (SETELAH DIKLIK) */
+#tab-foto:checked ~ .tab-controls label[for="tab-foto"],
+#tab-video:checked ~ .tab-controls label[for="tab-video"],
+#tab-audio:checked ~ .tab-controls label[for="tab-audio"],
+#tab-documen:checked ~ .tab-controls label[for="tab-documen"] {
+    background: #9e9e9e;
+    color: #000;
+    border: none;
+}
+
+
+
+/* FULLSCREEN IMAGE */
+#imgModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgModal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+}
+
+#imgModal span {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox img,
+.lightbox video,
+.lightbox iframe {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 10px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #777;
+}
+
+.profile-text table {
+    margin-bottom: 24px; /* jarak tabel ke teks */
+}
+
+.profile-desc {
+    margin-top: 12px;
+    line-height: 1.8;
+    color: #ccc; /* aesthetic abu-abu */
+}
+
+.kontak {
+    background: #111;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.kontak h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    color: white;
+    margin-bottom: 40px;
+}
+
+.kontak-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.kontak-card {
+    background: #fff;
+    width: 260px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.kontak-card h3 {
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.kontak-form {
+    background: #fff;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.kontak-form h3 {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.kontak-form form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #000;
+}
+
+.kontak-form input,
+.kontak-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #111;
+}
+
+.kontak-form button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.kontak-card a {
+    color: #0066ff;
+    text-decoration: none;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.kontak-card a:hover{
+    color: #444;
+    text-decoration: underline;
+}
